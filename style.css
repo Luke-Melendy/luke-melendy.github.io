@@ -5,30 +5,46 @@
   box-sizing: border-box;
 }
 
+:root{
+  --bg: #1f2326;           /* page background (dark grey) */
+  --panel: #242a2d;        /* panel / card background */
+  --muted: #9aa0a3;        /* muted text / secondary */
+  --text: #eaf4e6;         /* primary text - pale matcha */
+  --accent: #2f6d3a;       /* deep matcha green (primary accent) */
+  --accent-2: #7fb972;     /* lighter matcha accent */
+  --glass: rgba(255,255,255,0.03);
+  --shadow: rgba(0,0,0,0.6);
+}
+
+/* Overall page */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9fafc;
-  color: #222;
+  background-color: var(--bg);
+  color: var(--text);
   line-height: 1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
 /* ===== Navbar ===== */
 .navbar {
-  background-color: #ffffff;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px var(--shadow);
   position: sticky;
   top: 0;
   z-index: 10;
+  backdrop-filter: blur(6px);
 }
 
 .logo {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #004aad;
+  color: var(--accent-2);
+  letter-spacing: 0.4px;
 }
 
 .nav-links {
@@ -39,63 +55,71 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.2s;
+  color: var(--text);
+  opacity: 0.9;
+  font-weight: 600;
+  transition: color 0.18s, opacity 0.18s;
 }
 
 .nav-links a:hover,
 .nav-links .active {
-  color: #004aad;
+  color: var(--accent);
+  opacity: 1;
 }
 
 /* ===== Hero Section (Homepage) ===== */
 .hero {
   text-align: center;
   padding: 6rem 2rem;
-  background: linear-gradient(180deg, #e7f0ff 0%, #f9fafc 100%);
+  background: linear-gradient(180deg, rgba(47,109,58,0.07) 0%, var(--bg) 100%);
 }
 
 .hero h2 {
   font-size: 2.5rem;
-  color: #003a88;
+  color: var(--text);
   margin-bottom: 1rem;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
 .hero p {
   max-width: 700px;
   margin: 0 auto 2rem;
-  font-size: 1.1rem;
-  color: #333;
+  font-size: 1.05rem;
+  color: var(--muted);
 }
 
+/* Buttons */
 .btn-primary {
-  background-color: #004aad;
-  color: white;
+  background: linear-gradient(180deg, var(--accent), #244f31);
+  color: var(--text);
   text-decoration: none;
   padding: 0.8rem 1.6rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background-color 0.2s;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: transform 0.14s, box-shadow 0.14s;
+  box-shadow: 0 8px 22px rgba(15,40,20,0.36);
+  display: inline-block;
 }
 
 .btn-primary:hover {
-  background-color: #003a88;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(15,40,20,0.44);
 }
 
 .btn-secondary {
-  background-color: #e7f0ff;
-  color: #004aad;
+  background-color: transparent;
+  border: 1px solid rgba(127,185,114,0.14);
+  color: var(--accent-2);
   text-decoration: none;
   padding: 0.8rem 1.6rem;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 10px;
+  font-weight: 700;
   margin-left: 1rem;
-  transition: background-color 0.2s;
+  transition: background-color 0.12s, color 0.12s;
 }
 
 .btn-secondary:hover {
-  background-color: #d5e5ff;
+  background-color: rgba(127,185,114,0.06);
 }
 
 /* ===== Content Sections ===== */
@@ -106,36 +130,37 @@ body {
 }
 
 .content h2 {
-  color: #003a88;
+  color: var(--text);
   margin-bottom: 1rem;
   text-align: center;
 }
 
 .content p {
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--muted);
 }
 
 /* ===== Cards (Education, Work, Scouting) ===== */
 .edu-card,
 .work-card,
 .scout-card {
-  background: #ffffff;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), var(--panel));
   border-radius: 12px;
   padding: 1.5rem 2rem;
   margin: 2rem 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.02);
 }
 
 .edu-card h3,
 .work-card h3,
 .scout-card h3 {
-  color: #004aad;
+  color: var(--accent-2);
   margin-bottom: 0.5rem;
 }
 
 .date {
-  color: #555;
+  color: var(--muted);
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
@@ -147,6 +172,7 @@ ul {
 
 ul li {
   margin-bottom: 0.5rem;
+  color: var(--text);
 }
 
 /* ===== Skills Section ===== */
@@ -154,9 +180,9 @@ ul li {
   max-width: 900px;
   margin: 3rem auto;
   padding: 2rem;
-  background: #ffffff;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), var(--panel));
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
 }
 
 .skill-grid {
@@ -166,9 +192,19 @@ ul li {
 }
 
 .skills h2 {
-  color: #003a88;
+  color: var(--text);
   margin-bottom: 1rem;
   text-align: center;
+}
+
+/* Skill badges (small visuals) */
+.skill {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+  border-radius: 10px;
+  padding: 0.8rem;
+  text-align: center;
+  color: var(--text);
+  border: 1px solid rgba(127,185,114,0.06);
 }
 
 /* ===== Resume Section ===== */
@@ -176,7 +212,7 @@ ul li {
   margin: 2rem 0;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .resume-actions {
@@ -191,17 +227,17 @@ ul li {
 
 /* ===== Contact Section ===== */
 .contact {
-  background-color: #ffffff;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), var(--panel));
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
   max-width: 900px;
   margin: 0 auto 3rem;
 }
 
 .contact h3 {
   text-align: center;
-  color: #003a88;
+  color: var(--text);
   margin-bottom: 1rem;
 }
 
@@ -212,10 +248,11 @@ ul li {
 
 .contact li {
   margin-bottom: 0.5rem;
+  color: var(--muted);
 }
 
 .contact a {
-  color: #004aad;
+  color: var(--accent-2);
   text-decoration: none;
 }
 
@@ -227,9 +264,18 @@ ul li {
 footer {
   text-align: center;
   padding: 1.5rem;
-  color: #555;
-  background-color: #f1f3f8;
+  color: var(--muted);
+  background-color: #161819;
   font-size: 0.9rem;
+}
+
+/* ===== Subtle utility classes ===== */
+.card-quiet {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.02);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  color: var(--muted);
 }
 
 /* ===== Responsive Design ===== */
