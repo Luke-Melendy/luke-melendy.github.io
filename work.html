@@ -3,60 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work Experience | Luke Melendy</title>
+  <title>Experience | Luke Melendy</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="assets/icons/site-logo.png" /> 
+  <link rel="icon" type="image/png" href="assets/icons/site-logo.png" />
 </head>
-
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <h1 class="logo">Luke Melendy</h1>
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="logo" href="index.html">Luke Melendy</a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="school.html">School</a></li>
-      <li><a href="work.html" class="active">Work</a></li>
-      <li><a href="scouting.html">Scouting</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="work.html" class="active">Experience</a></li>
+      <li><a href="school.html">Education</a></li>
+      <li><a href="scouting.html">Leadership</a></li>
       <li><a href="resume.html">Resume</a></li>
     </ul>
   </nav>
 
-  <!-- Work Experience Section -->
-  <section class="content">
-    <h2>Work Experience</h2>
-
-    <div class="work-card">
-      <h3>Intern Software Developer</h3>
-      <p class="company">UNH Interoperability Lab — Durham, NH</p>
-      <p class="date">May 2025 – Present</p>
-      <ul>
-        <li>Developed IPv6-related test scripts for Internet protocols such as IPSec and DHCPv6.</li>
-        <li>Maintained and enhanced large-scale testing software in Java using Git, Jira, and Vim to improve team efficiency.</li>
-        <li>Collaborated in a team environment using AGILE methodologies, focusing on communication, leadership, and consistent improvement.</li>
-      </ul>
+  <main class="page">
+    <section class="page-header">
+      <p class="eyebrow">Experience</p>
+      <h1>Technical experience and leadership background</h1>
       <p>
-        This experience has strengthened my technical foundation and taught me the value of collaboration, adaptability, and maintaining reliable, well-documented code.
+        My experience combines software development, network protocol testing, team collaboration, and practical leadership in customer-facing and student-led environments.
       </p>
-    </div>
+    </section>
 
-    <div class="work-card">
-      <h3>Front End Supervisor</h3>
-      <p class="company">Ocean State Job Lot — Hooksett, NH</p>
-      <p class="date">June 2022 – Present</p>
-      <ul>
-        <li>Earned Employee of the Month twice for delivering excellent customer service and contributing beyond regular duties.</li>
-        <li>Supervise and train employees in daily operations to build strong communication and leadership skills.</li>
-        <li>Manage company reports for pilferage and damages, identifying ways to minimize product loss and improve accountability.</li>
-      </ul>
-      <p>
-        Through this role, I developed leadership, organization, and interpersonal skills that continue to help me in both professional and academic settings.
-      </p>
-    </div>
-  </section>
+    <section class="timeline">
+      <article class="detail-card highlight-card">
+        <div class="detail-header">
+          <div>
+            <h2>Software Developer</h2>
+            <p class="meta">UNH InterOperability Laboratory · Durham, NH · May 2025 – Present</p>
+          </div>
+          <div class="tag-row"><span>Java</span><span>Kotlin</span><span>TCL</span><span>Wireshark</span></div>
+        </div>
+        <p>
+          I work on IOL-INTACT, an internal network protocol testing platform, as a primary Java contributor on a small team. My work focuses on test infrastructure, maintainability, and support for protocol conformance and interoperability workflows.
+        </p>
+        <ul>
+          <li>Develop Java-based testing infrastructure for network protocol testing workflows.</li>
+          <li>Write and debug IPv6-related test scripts using Kotlin and TCL, including DHCPv6 and IPSec.</li>
+          <li>Analyze packet-level behavior using internal packet capture tooling and Wireshark.</li>
+          <li>Collaborate through Git, Bitbucket, Jira, Linux, Vim, and command-line workflows.</li>
+        </ul>
+      </article>
 
-  <!-- Footer -->
+      <article class="detail-card">
+        <div class="detail-header">
+          <div>
+            <h2>Front-End Supervisor</h2>
+            <p class="meta">Ocean State Job Lot · Hooksett, NH · June 2022 – January 2026</p>
+          </div>
+        </div>
+        <p>
+          I supervised front-end store operations in a fast-paced customer-facing environment, training associates, resolving customer issues, and maintaining reliable daily workflows.
+        </p>
+        <ul>
+          <li>Coordinated team members and supported daily store operations.</li>
+          <li>Built communication, prioritization, and leadership skills through hands-on supervision.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
   <footer>
-    <p>© 2025 Luke Melendy</p>
+    <p>© 2026 Luke Melendy · <a href="mailto:lukemelendy4@gmail.com">lukemelendy4@gmail.com</a></p>
   </footer>
 </body>
 </html>
